@@ -1,0 +1,82 @@
+.banniere{
+    height: 10vh;
+    margin-bottom: 40px;
+    background: linear-gradient(to right, #2C2891, #3D56B2 );
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+.divSearch{
+    background: #ffffff;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.divSearch input[type="text"]{
+    outline: 0;
+    width: 74%;
+    height: 70%;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 1.4px;
+}
+
+.divSearch button{
+    height: 70%;
+    width: 14%;
+    background-color: #f05;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.divSearch button:hover{
+    transform: scale(.9,.9);
+    border-radius: 20px;
+
+}
+
+.appContainer{
+    padding: 0 10%;
+}
+
+.product-result{
+    color: #7a7272;
+}
+
+table{
+    width: 100%;
+    margin-top: 20px;
+}
+
+thead{
+    background-color: #FAEEE0;
+    height: 8vh;
+}
+
+thead th button{
+    background-color: #3D56B2;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+tbody tr td{
+    text-align: center;
+    padding: 20px 0;    
+}
+
+tbody tr td{
+    border-bottom: 1px solid #FAEEE0;
+}
