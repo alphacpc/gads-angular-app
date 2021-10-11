@@ -21,17 +21,22 @@
     <thead>
       <tr>
         <th id="forId">ID</th>
-        <th id="forImg"><button>Image</button></th>
+        <th id="forImg">
+          <button 
+            (click)="toggleImage()">
+              {{ showImg ? "Masquer" : "Voir" }} Image
+          </button>
+        </th>
         <th id="forName">Nom du produit</th>
         <th id="forCode">Code</th>
         <th id="forPrice">Prix</th>
         <th id="forNote">Note(s)</th>
       </tr>
     </thead>
-    <tbody> 
-      <tr *ngFor="let i for i of [1,2,3,4,5,6]">
+    <tbody *ngIf="products.length"> 
+      <tr *ngFor="let item for item of products">
         <td>654564546</td>
-        <td>Avatar</td>
+        <td> <span *ngIf="showImg">Avatar</span></td>
         <td>Produit test</td>
         <td>HG-5420-DF</td>
         <td>500 fcfa</td>
