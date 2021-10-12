@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'GADS Angular App';
 
   products : any[] = [
@@ -46,13 +46,35 @@ export class AppComponent {
       "productImage": "assets/images/pasteque.png",
     }
   ];
-  
+
   imgWidth : number  = 80;
   imgHeight : number = 80;
   showImg : boolean = false;
-  textFilter : string = "";
+  
+  filteredProducts: any[] = [];
+
+  private _textFilter : string = "";
 
   toggleImage(): void{
     this.showImg = !this.showImg;
+  }
+
+  get textFilter(): string{
+    return this._textFilter;
+  }
+
+  set textFilter(value : string){
+    this._textFilter = value;
+    console.log(this._textFilter);
+    this.filteredProducts = this.performFilter(value);
+  }
+
+  performFilter(filterBy : string) : any[]{
+    filterBy = filterBy.toLowerCase();
+    return this.products.filter((product) => product.productName.toLowerCase().includes(filterBy))
+  }
+
+  ngOnInit(): void{
+    this.textFilter = ""
   }
 }

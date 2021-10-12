@@ -17,9 +17,9 @@
   
   <!-- <h1>{{ title }} app is running!</h1> -->
   
-  <p class="product-result">Resultat: 12 articles</p>
+  <p class="product-result">Resultat: {{filteredProducts.length}} produit(s)</p>
 
-  <p>Recherche de: {{ textFilter }}</p>
+  <!-- <p>Recherche de: {{ textFilter }}</p> -->
 
   <table>
     <thead>
@@ -38,7 +38,7 @@
       </tr>
     </thead>
     <tbody *ngIf="products.length"> 
-      <tr *ngFor="let product for product of products">
+      <tr *ngFor="let product for product of filteredProducts">
         <td> {{ product.productId }}</td>
         <td> <img [src]="product.productImage" [width]="imgWidth" [height]="imgHeight" *ngIf="showImg"/></td>
         <td>{{ product.productName }}</td>
