@@ -4,8 +4,11 @@
 <div class="banniere">
 
   <div class="divSearch">
-    <input type="text" placeholder="Please ..." />
-    <button type="submit">Rechercher</button>
+    <input 
+      type="text" 
+      placeholder="Please ..."
+      [(ngModel)]="textFilter" />
+    <!-- <button type="submit">Rechercher</button> -->
   </div>
 
 </div>
@@ -16,6 +19,7 @@
   
   <p class="product-result">Resultat: 12 articles</p>
 
+  <p>Recherche de: {{ textFilter }}</p>
 
   <table>
     <thead>
@@ -24,7 +28,7 @@
         <th id="forImg">
           <button 
             (click)="toggleImage()">
-              {{ showImg ? "Masquer" : "Voir" }} Image
+              {{ showImg ? "Masquer" : "Afficher" }} l'image
           </button>
         </th>
         <th id="forName">Nom du produit</th>
@@ -34,13 +38,13 @@
       </tr>
     </thead>
     <tbody *ngIf="products.length"> 
-      <tr *ngFor="let item for item of products">
-        <td>654564546</td>
-        <td> <span *ngIf="showImg">Avatar</span></td>
-        <td>Produit test</td>
-        <td>HG-5420-DF</td>
-        <td>500 fcfa</td>
-        <td>4</td>
+      <tr *ngFor="let product for product of products">
+        <td> {{ product.productId }}</td>
+        <td> <img [src]="product.productImage" [width]="imgWidth" [height]="imgHeight" *ngIf="showImg"/></td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.productCode }} </td>
+        <td>{{ product.productPrice }}</td>
+        <td>{{ product.productNote }}</td>
       </tr>
     </tbody>
   </table>

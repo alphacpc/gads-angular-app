@@ -18,14 +18,14 @@
 
 .divSearch input[type="text"]{
     outline: 0;
-    width: 74%;
+    width: 90%;
     height: 70%;
     border: none;
     font-size: 15px;
     letter-spacing: 1.4px;
 }
 
-.divSearch button{
+/* .divSearch button{
     height: 70%;
     width: 14%;
     background-color: #f05;
@@ -42,7 +42,7 @@
     transform: scale(.9,.9);
     border-radius: 20px;
 
-}
+} */
 
 .appContainer{
     padding: 0 10%;
