@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from "./product";
+import { ProductService } from './product.service';
+
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -9,56 +11,21 @@ registerLocaleData(localeFr, 'fr');
 @Component({
   selector: 'app-product-list',
   templateUrl: './productList.component.html',
-  styleUrls: ['./productList.component.css']
+  styleUrls: ['./productList.component.css'],
+  providers: [ProductService]
 })
 
 export class ProductListComponent implements OnInit {
   
+  constructor( private _productService : ProductService){}
 
-  products : IProduct[] = [
-    {
-      "productId": 5246,
-      "productName": "Chou",
-      "productCode": "PR-5420-L",
-      "productDesc": "Lorem ipsum",
-      "productPrice": 200,
-      "productNote": 4.2,
-      "productImage": "assets/images/chou.png",
-    },
-    {
-      "productId": 5247,
-      "productName": "Tomate",
-      "productCode": "PR-5445-L",
-      "productDesc": "Lorem ipsum",
-      "productPrice": 300,
-      "productNote": 4,
-      "productImage": "assets/images/tomate.png",
-    },
-    {
-      "productId": 5656,
-      "productName": "Kiwi",
-      "productCode": "PR-4558-F",
-      "productDesc": "Lorem ipsum",
-      "productPrice": 250,
-      "productNote": 4,
-      "productImage": "assets/images/kiwi.png",
-    },
-    {
-      "productId": 5657,
-      "productName": "Pasteque",
-      "productCode": "PR-5545-F",
-      "productDesc": "Lorem ipsum",
-      "productPrice": 400,
-      "productNote": 4.8,
-      "productImage": "assets/images/pasteque.png",
-    }
-  ];
+  products : IProduct[] = []
 
   imgWidth : number  = 80;
   imgHeight : number = 80;
   showImg : boolean = false;
   
-  filteredProducts: any[] = [];
+  filteredProducts: IProduct[] = [];
 
   private _textFilter : string = "";
 
@@ -82,6 +49,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    this.textFilter = ""
+    this.products = this._productService.getProducts();
+    this.filteredProducts = this.products;
   }
 }
