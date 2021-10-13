@@ -1,53 +1,5 @@
 
 <app-header></app-header>
 
-<div class="banniere">
 
-  <div class="divSearch">
-    <input 
-      type="text" 
-      placeholder="Please ..."
-      [(ngModel)]="textFilter" />
-    <!-- <button type="submit">Rechercher</button> -->
-  </div>
-
-</div>
-
-<div class="appContainer" role="main">
-  
-  <!-- <h1>{{ title }} app is running!</h1> -->
-  
-  <p class="product-result">Resultat: {{filteredProducts.length}} produit(s)</p>
-
-  <!-- <p>Recherche de: {{ textFilter }}</p> -->
-
-  <table>
-    <thead>
-      <tr>
-        <th id="forId">ID</th>
-        <th id="forImg">
-          <button 
-            (click)="toggleImage()">
-              {{ showImg ? "Masquer" : "Afficher" }} l'image
-          </button>
-        </th>
-        <th id="forName">Nom du produit</th>
-        <th id="forCode">Code</th>
-        <th id="forPrice">Prix</th>
-        <th id="forNote">Note(s)</th>
-      </tr>
-    </thead>
-    <tbody *ngIf="products.length"> 
-      <tr *ngFor="let product for product of filteredProducts">
-        <td> {{ product.productId }}</td>
-        <td> <img [src]="product.productImage" [width]="imgWidth" [height]="imgHeight" *ngIf="showImg"/></td>
-        <td>{{ product.productName }}</td>
-        <td>{{ product.productCode }} </td>
-        <td>{{ product.productPrice }}</td>
-        <td>{{ product.productNote }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-
+<app-product-list></app-product-list>
