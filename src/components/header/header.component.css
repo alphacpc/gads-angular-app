@@ -1,0 +1,15 @@
+header{
+    height: 20vh;
+}
+
+header .Logo{
+    /* background-color: yellow; */
+    height: 100%;
+    display: flex;
+}
+
+header .Logo img{
+    height: 100%;
+    width: 500px;
+    /* object-fit: scale-down; 100%*/
+}

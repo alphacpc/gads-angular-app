@@ -1,0 +1,48 @@
+
+<div class="banniere">
+
+    <div class="divSearch">
+      <input 
+        type="text" 
+        placeholder="Please ..."
+        [(ngModel)]="textFilter" />
+    </div>
+  
+  </div>
+  
+  <div class="appContainer" role="main">
+    
+    <p class="product-result">Resultat: {{filteredProducts.length}} produit(s)</p>
+  
+  
+    <table>
+      <thead>
+        <tr>
+          <th id="forId">ID</th>
+          <th id="forImg">
+            <button 
+              (click)="toggleImage()">
+                {{ showImg ? "Masquer" : "Afficher" }} l'image
+            </button>
+          </th>
+          <th id="forName">Nom du produit</th>
+          <th id="forCode">Code</th>
+          <th id="forPrice">Prix</th>
+          <th id="forNote">Note(s)</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="products.length"> 
+        <tr *ngFor="let product for product of filteredProducts">
+          <td> {{ product.productId }}</td>
+          <td> <img [src]="product.productImage" [width]="imgWidth" [height]="imgHeight" *ngIf="showImg"/></td>
+          <td>{{ product.productName }}</td>
+          <td>{{ product.productCode }} </td>
+          <td>{{ product.productPrice | currency:'FCFA':'symbol':'3.0-0':'fr' }}</td>
+          <td>{{ product.productNote }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+  
+  
