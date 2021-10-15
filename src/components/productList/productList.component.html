@@ -26,6 +26,7 @@
             </button>
           </th>
           <th id="forName">Nom du produit</th>
+          <th id="forCateg">Categorie</th>
           <th id="forCode">Code</th>
           <th id="forPrice">Prix</th>
           <th id="forNote">Note(s)</th>
@@ -36,6 +37,7 @@
           <td> {{ product.productId }}</td>
           <td> <img [src]="product.productImage" [width]="imgWidth" [height]="imgHeight" *ngIf="showImg"/></td>
           <td>{{ product.productName }}</td>
+          <td>{{ product.productCateg }}</td>
           <td>{{ product.productCode }} </td>
           <td>{{ product.productPrice | currency:'FCFA':'symbol':'3.0-0':'fr' }}</td>
           <td>{{ product.productNote }}</td>
