@@ -1,0 +1,42 @@
+export const products = [
+    {
+      "productId": 5246,
+      "productName": "Chou",
+      "productCode": "PR-5420-L",
+      "productCateg": "Legumes",
+      "productDesc": "Lorem ipsum description",
+      "productPrice": 200,
+      "productNote": 4.2,
+      "productImage": "assets/images/chou.png",
+    },
+    {
+      "productId": 5247,
+      "productName": "Tomate",
+      "productCode": "PR-5445-L",
+      "productCateg": "Legumes",
+      "productDesc": "Lorem ipsum description",
+      "productPrice": 300,
+      "productNote": 4,
+      "productImage": "assets/images/tomate.png",
+    },
+    {
+      "productId": 5656,
+      "productName": "Kiwi",
+      "productCode": "PR-4558-F",
+      "productCateg": "Fruits",
+      "productDesc": "Lorem ipsum description",
+      "productPrice": 250,
+      "productNote": 4,
+      "productImage": "assets/images/kiwi.png",
+    },
+    {
+      "productId": 5657,
+      "productName": "Pasteque",
+      "productCode": "PR-5545-F",
+      "productCateg": "Fruits",
+      "productDesc": "Lorem ipsum description",
+      "productPrice": 400,
+      "productNote": 4.8,
+      "productImage": "assets/images/pasteque.png",
+    }
+  ];
